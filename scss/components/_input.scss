@@ -17,22 +17,45 @@
   justify-content: flex-start;
   align-items: center;
   gap: $spacing-200;
+  position: relative;
 
   border-radius: $radius-12;
   width: 100%;
 
+  &:focus-within {
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.5);
+  }
+
   &__input {
     width: 100%;
     padding: $spacing-200 $spacing-300 $spacing-200 $spacing-700;
+    background-color: transparent;
+    color: white;
+    border-radius: $radius-12;
+
     &::placeholder {
       font-family: "DM Sans";
       font-size: 1.25rem;
       font-style: normal;
       font-weight: 500;
       line-height: 120%;
+      color: rgba(255, 255, 255, 0.6);
     }
+
     &:focus {
       outline: none;
+      background-color: transparent;
+    }
+
+    // Fix white background when clicking on autocomplete/previously chosen text
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-box-shadow: 0 0 0 1000px $neutral-800 inset !important;
+      -webkit-text-fill-color: white !important;
+      transition: background-color 5000s ease-in-out 0s;
+      border-radius: $radius-12;
     }
   }
 
@@ -40,5 +63,53 @@
     width: 1.25rem;
     position: absolute;
     left: $spacing-300;
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #1a1a2e;
+    border-radius: 12px;
+    margin-top: 8px;
+    max-height: 400px;
+    overflow-y: auto;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    list-style: none;
+    padding: 0;
+    display: none; // Hidden by default
+
+    &--visible {
+      display: block;
+    }
+  }
+
+  &__dropdown-item {
+    padding: 16px 20px;
+    cursor: pointer;
+    color: #fff;
+    transition: background 0.2s;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__dropdown-city {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  &__dropdown-location {
+    font-size: 14px;
+    color: #aaa;
+    margin-top: 4px;
   }
 }

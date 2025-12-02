@@ -74,6 +74,11 @@
     width: 2rem;
     filter: invert(1);
   }
+
+  &__dropdown-wrapper {
+    position: relative;
+  }
+
   &__dropdown {
     background-color: $neutral-800;
     padding: 1.25rem;
@@ -83,10 +88,67 @@
     cursor: pointer;
     transition: all 0.3s ease;
     background-color: #302f4a;
+    align-items: center;
 
     &:hover {
       background-color: $neutral-700;
     }
+  }
+
+  &__icon {
+    width: 0.75rem;
+    transition: transform 0.3s ease;
+  }
+
+  &__day-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background: #1a1a2e;
+    border-radius: 12px;
+    min-width: 160px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    list-style: none;
+    padding: 8px 0;
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+
+    &--visible {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &__day-item {
+    padding: 12px 20px;
+    cursor: pointer;
+    color: #fff;
+    transition: all 0.25s ease;
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    line-height: 1.4;
+    border-left: 3px solid transparent;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-left-color: rgba(74, 222, 128, 0.6);
+      padding-left: 23px;
+    }
+
+    &--active {
+      background: rgba(74, 222, 128, 0.15);
+      border-left-color: #4ade80;
+      font-weight: 600;
+    }
+  }
+
+  &__day-text {
+    color: #ffffff;
   }
 
   &__cards {
@@ -104,10 +166,38 @@
     align-items: center;
     padding: $spacing-125 $spacing-150;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+      );
+      transition: left 0.5s ease;
+    }
 
     &:hover {
       background: $neutral-600;
+      border-color: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+      &::before {
+        left: 100%;
+      }
+    }
+
+    &:active {
+      transform: scale(0.98);
     }
   }
 

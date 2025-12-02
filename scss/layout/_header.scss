@@ -25,6 +25,10 @@
     }
   }
 
+  &__setting-wrapper {
+    position: relative;
+  }
+
   &__setting {
     display: flex;
     justify-content: center;
@@ -69,6 +73,152 @@
 
     &--dropdown {
       width: 0.75rem;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  &__setting-menu {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    background: linear-gradient(135deg, #1e1e3f 0%, #1a1a2e 100%);
+    border-radius: 16px;
+    min-width: 220px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+    list-style: none;
+    padding: 12px;
+    display: none;
+    opacity: 0;
+    transform: translateY(-12px) scale(0.95);
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+
+    &--visible {
+      display: block;
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -6px;
+      right: 20px;
+      width: 12px;
+      height: 12px;
+      background: linear-gradient(135deg, #1e1e3f 0%, #1a1a2e 100%);
+      transform: rotate(45deg);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-left: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  &__setting-group {
+    list-style: none;
+
+    &:not(:last-child) {
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  &__setting-group-title {
+    padding: 8px 12px;
+    margin-bottom: 6px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  &__setting-item {
+    padding: 14px 18px;
+    margin-bottom: 4px;
+    cursor: pointer;
+    color: #fff;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "DM Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(74, 222, 128, 0.15) 0%,
+        rgba(59, 130, 246, 0.15) 100%
+      );
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: inset 0 0 20px rgba(74, 222, 128, 0.1);
+      border-left: 3px solid #4ade80;
+
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    &:active {
+      background: rgba(255, 255, 255, 0.12);
+    }
+  }
+
+  &__setting-text {
+    color: #ffffff;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    letter-spacing: 0.01em;
+    font-size: 0.9rem;
+  }
+
+  &__setting-check {
+    color: #4ade80;
+    font-weight: 700;
+    font-size: 1.25rem;
+    min-width: 24px;
+    text-align: right;
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 2px 4px rgba(74, 222, 128, 0.4));
+    animation: checkPulse 0.3s ease;
+  }
+
+  @keyframes checkPulse {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
     }
   }
 
@@ -78,6 +228,34 @@
 
     @include desktop {
       max-width: 50rem;
+    }
+  }
+
+  &__unit-badge {
+    background: linear-gradient(
+      135deg,
+      rgba(74, 222, 128, 0.15) 0%,
+      rgba(59, 130, 246, 0.15) 100%
+    );
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 100px;
+    padding: 0.625rem 1.25rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    margin-top: -1rem;
+  }
+
+  &__unit-badge-text {
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 0.02em;
+
+    strong {
+      font-weight: 600;
+      color: #4ade80;
+      text-shadow: 0 0 8px rgba(74, 222, 128, 0.3);
     }
   }
 }
