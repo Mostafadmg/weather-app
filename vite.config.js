@@ -1,5 +1,5 @@
 export default {
-  base: '/weather-app/',
+  base: "/weather-app/",
   css: {
     devSourcemap: true,
   },
@@ -7,8 +7,8 @@ export default {
     open: true,
   },
   build: {
-    outDir: 'dist',
-    assetsDir: 'assets',
+    outDir: "dist",
+    assetsDir: "assets",
     sourcemap: false,
   },
 };
