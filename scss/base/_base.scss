@@ -1,0 +1,38 @@
+body {
+  background-color: $neutral-900;
+  color: white;
+}
+
+.app {
+  padding: $spacing-300;
+
+  @include desktop {
+    padding: $spacing-600 $spacing-1400 $spacing-1000 $spacing-1400;
+  }
+}
+
+.main {
+  @include desktop {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-top: $spacing-800;
+  }
+}
+
+.left__section {
+  @include desktop {
+    flex: 1;
+    max-width: 52rem;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.right__section {
+  @include desktop {
+    flex-shrink: 0;
+    width: 25rem;
+  }
+}

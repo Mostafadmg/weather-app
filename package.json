@@ -1,0 +1,19 @@
+{
+  "name": "weather-app-main",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.17",
+    "autoprefixer": "^10.4.22",
+    "postcss": "^8.5.6",
+    "sass": "^1.94.2",
+    "tailwindcss": "^4.1.17",
+    "vite": "^7.2.4"
+  }
+}

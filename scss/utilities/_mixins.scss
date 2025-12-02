@@ -1,0 +1,28 @@
+// SCSS mixins
+// -----------------------------------------
+// Breakpoints
+// -----------------------------------------
+$bp-tablet: 48em; // 768px
+$bp-desktop: 64em; // 1024px
+$bp-large: 90em; // 1440px
+
+// -----------------------------------------
+// Media Query Mixins
+// -----------------------------------------
+@mixin tablet {
+  @media (min-width: $bp-tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $bp-desktop) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media (min-width: $bp-large) {
+    @content;
+  }
+}

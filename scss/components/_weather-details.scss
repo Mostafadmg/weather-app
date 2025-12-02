@@ -1,0 +1,37 @@
+.weather__details-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); // 2 equal columns
+  grid-template-rows: repeat(2, 1fr); // 2 equal rows
+  gap: $spacing-200;
+  margin-top: $spacing-250;
+
+  @include tablet {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+  }
+
+  @include desktop {
+    margin-top: $spacing-400;
+  }
+}
+
+.weather__details {
+  background-color: $neutral-800;
+  border-radius: $radius-12;
+  padding: $spacing-250 $spacing-300;
+  border: 1px solid #3c3b5e;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: $spacing-300;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: $neutral-600;
+    transform: scale(1.015);
+  }
+}

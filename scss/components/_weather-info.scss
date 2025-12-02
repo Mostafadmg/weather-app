@@ -1,0 +1,51 @@
+.weather {
+  margin-top: $spacing-400;
+
+  @include desktop {
+    margin-top: 0;
+    flex: 1;
+  }
+  &__info {
+    background: url("../../assets/images/bg-today-small.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: $radius-20;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: $spacing-1000 $spacing-300;
+    gap: $spacing-300;
+    overflow: hidden;
+    cursor: pointer;
+    margin: 0 auto;
+    transition: all 0.2s ease;
+
+    @include tablet {
+      flex-direction: row;
+    }
+
+    @include desktop {
+      background: url("../../assets/images/bg-today-large.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      min-height: 18.8rem;
+    }
+  }
+
+  &__time {
+    opacity: 0.8;
+  }
+
+  &__logo {
+    width: 7.5rem;
+  }
+
+  &__temperature-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+  }
+}

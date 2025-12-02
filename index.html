@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <!-- PRECONNECT for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- GOOGLE FONTS: DM Sans + Bricolage Grotesque -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,500;0,600;0,700;1,600&family=Bricolage+Grotesque:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>weather-app-main</title>
+  </head>
+  <body>
+    <div id="app" class="app">
+      <header class="header">
+        <nav class="header__nav">
+          <div class="header__logo">
+            <img src="./assets/images/logo.svg" alt="logo" />
+          </div>
+          <button class="header__setting">
+            <img
+              src="./assets/mySVGs/setting-svgrepo-com.svg"
+              alt=""
+              class="header__setting--icon"
+            />
+            <p class="text-14">Units</p>
+            <img
+              src="./assets/images/icon-dropdown.svg"
+              alt=""
+              class="header__setting--dropdown"
+            />
+          </button>
+        </nav>
+        <div class="header__title">
+          <h1 class="header__title text-52">How’s the sky looking today?</h1>
+        </div>
+      </header>
+      <section class="searchContainer">
+        <div class="search">
+          <img src="./assets/images/icon-search.svg" alt="" class="search__img" />
+          <input
+            type="text"
+            required
+            id="location"
+            placeholder="Search for a place..."
+            class="search__input"
+          />
+        </div>
+        <button class="btn-primary text-20" id="search-btn">Search</button>
+      </section>
+      <main class="main">
+        <section class="left__section">
+          <!-- search Container -->
+
+          <!-- Weather Info -->
+          <div class="weather">
+            <div class="weather__info">
+              <div class="weather__location-box">
+                <p class="weather__location text-28" id="weather-location">
+                  Cardiff, Wales
+                </p>
+                <p class="weather__time text-20m" id="weather-time">
+                  Tuesday, Dec 1 , 2025
+                </p>
+              </div>
+              <div class="weather__temperature-box">
+                <img
+                  src="./assets/images/icon-partly-cloudy.webp"
+                  alt="Weather icon"
+                  class="weather__logo"
+                  id="weather-icon"
+                />
+                <p class="weather__temp text-96" id="weather-temp" data-unit="celsius">
+                  68 °
+                </p>
+              </div>
+            </div>
+
+            <div class="weather__details-container">
+              <!-- item 1 -->
+              <div class="weather__details">
+                <p class="weather__details-text text-20m">Feels like</p>
+                <p class="weather__details-tem text-32" data-temperature="temperature">
+                  64°
+                </p>
+              </div>
+
+              <!-- item 2 -->
+              <div class="weather__details">
+                <p class="weather__details-text text-20m">Humidity</p>
+                <p class="weather__details-tem text-32" data-humidity="humidity">46%</p>
+              </div>
+
+              <!-- item 3 -->
+              <div class="weather__details">
+                <p class="weather__details-text text-20m">Feels Like</p>
+                <p class="weather__details-tem text-32" data-wind="wind">9 mph</p>
+              </div>
+
+              <!-- item 4 -->
+              <div class="weather__details">
+                <p class="weather__details-text text-20m">Precipitation</p>
+                <p
+                  class="weather__details-tem text-32"
+                  data-precipitation="precipitation"
+                >
+                  0
+                </p>
+              </div>
+            </div>
+
+            <!-- <div class="weather__loading" id="weather-loading" style="display: none">
+            <p>Loading weather data...</p>
+          </div>
+
+          <div class="weather__error" id="weather-error" style="display: none">
+            <p id="error-message">Unable to fetch weather data</p>
+          </div> -->
+          </div>
+
+          <!-- daily forecast  -->
+          <div class="forecast">
+            <h1 class="forecast__label text-20">Daily forecast</h1>
+            <!-- item 1 -->
+            <div class="forecast__list">
+              <!-- item 1 -->
+              <div class="forecast__item">
+                <p class="forecast__day text-20m">Tue</p>
+                <div class="forecast__icon">
+                  <img src="./assets/images/icon-rain.webp" alt="" />
+                </div>
+                <div class="forecast__temp text-16">
+                  <p class="forecast__temp--min">70°</p>
+                  <p class="forecast__temp--max">57°</p>
+                </div>
+              </div>
+
+              <!-- item 2 -->
+
+              <div class="forecast__item">
+                <p class="forecast__day text-20m">Tue</p>
+                <div class="forecast__icon">
+                  <img src="./assets/images/icon-rain.webp" alt="" />
+                </div>
+                <div class="forecast__temp text-16">
+                  <p class="forecast__temp--min">70°</p>
+                  <p class="forecast__temp--max">57°</p>
+                </div>
+              </div>
+
+              <!-- item 3 -->
+
+              <div class="forecast__item">
+                <p class="forecast__day text-20m">Tue</p>
+                <div class="forecast__icon">
+                  <img src="./assets/images/icon-rain.webp" alt="" />
+                </div>
+                <div class="forecast__temp text-16">
+                  <p class="forecast__temp--min">70°</p>
+                  <p class="forecast__temp--max">57°</p>
+                </div>
+              </div>
+
+              <!-- item 4 -->
+
+              <div class="forecast__item">
+                <p class="forecast__day text-20m">Tue</p>
+                <div class="forecast__icon">
+                  <img src="./assets/images/icon-rain.webp" alt="" />
+                </div>
+                <div class="forecast__temp text-16">
+                  <p class="forecast__temp--min">70°</p>
+                  <p class="forecast__temp--max">57°</p>
+                </div>
+              </div>
+
+              <!-- item 5 -->
+
+              <div class="forecast__item">
+                <p class="forecast__day text-20m">Tue</p>
+                <div class="forecast__icon">
+                  <img src="./assets/images/icon-rain.webp" alt="" />
+                </div>
+                <div class="forecast__temp text-16">
+                  <p class="forecast__temp--min">70°</p>
+                  <p class="forecast__temp--max">57°</p>
+                </div>
+              </div>
+
+              <!-- item 6 -->
+
+              <div class="forecast__item">
+                <p class="forecast__day text-20m">Tue</p>
+                <div class="forecast__icon">
+                  <img src="./assets/images/icon-rain.webp" alt="" />
+                </div>
+                <div class="forecast__temp text-16">
+                  <p class="forecast__temp--min">70°</p>
+                  <p class="forecast__temp--max">57°</p>
+                </div>
+              </div>
+
+              <!-- item 7 -->
+
+              <div class="forecast__item">
+                <p class="forecast__day text-20m">Tue</p>
+                <div class="forecast__icon">
+                  <img src="./assets/images/icon-rain.webp" alt="" />
+                </div>
+                <div class="forecast__temp text-16">
+                  <p class="forecast__temp--min">70°</p>
+                  <p class="forecast__temp--max">57°</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="right__section">
+          <!-- Hourly Forecast -->
+          <div class="forecast-h">
+            <div class="forecast-h__header">
+              <h3 class="forecast-h__label text-20">Hourly forecast</h3>
+
+              <div class="forecast-h__dropdown">
+                <p class="forecast-h__day text-16">Tuesday</p>
+                <img
+                  src="./assets/images/icon-dropdown.svg"
+                  alt=""
+                  class="forecast-h__icon"
+                />
+              </div>
+            </div>
+
+            <div class="forecast-h__cards">
+              <!-- card 1 -->
+              <div class="forecast-h__card">
+                <div class="forecast-h__info">
+                  <img src="./assets/images/icon-fog.webp" alt="" />
+                  <p class="forecast-h__time text-20m">3 PM</p>
+                </div>
+                <div class="forecast-h__temp text-16">63°</div>
+              </div>
+
+              <!-- card 2 -->
+              <div class="forecast-h__card">
+                <div class="forecast-h__info">
+                  <img src="./assets/images/icon-fog.webp" alt="" />
+                  <p class="forecast-h__time text-20m">3 PM</p>
+                </div>
+                <div class="forecast-h__temp text-16">63°</div>
+              </div>
+
+              <!-- card 3 -->
+              <div class="forecast-h__card">
+                <div class="forecast-h__info">
+                  <img src="./assets/images/icon-fog.webp" alt="" />
+                  <p class="forecast-h__time text-20m">3 PM</p>
+                </div>
+                <div class="forecast-h__temp text-16">63°</div>
+              </div>
+              <!-- card 4 -->
+              <div class="forecast-h__card">
+                <div class="forecast-h__info">
+                  <img src="./assets/images/icon-fog.webp" alt="" />
+                  <p class="forecast-h__time text-20m">3 PM</p>
+                </div>
+                <div class="forecast-h__temp text-16">63°</div>
+              </div>
+
+              <!-- card 5 -->
+              <div class="forecast-h__card">
+                <div class="forecast-h__info">
+                  <img src="./assets/images/icon-fog.webp" alt="" />
+                  <p class="forecast-h__time text-20m">3 PM</p>
+                </div>
+                <div class="forecast-h__temp text-16">63°</div>
+              </div>
+
+              <!-- card 6 -->
+              <div class="forecast-h__card">
+                <div class="forecast-h__info">
+                  <img src="./assets/images/icon-fog.webp" alt="" />
+                  <p class="forecast-h__time text-20m">3 PM</p>
+                </div>
+                <div class="forecast-h__temp text-16">63°</div>
+              </div>
+
+              <!-- card 7 -->
+              <div class="forecast-h__card">
+                <div class="forecast-h__info">
+                  <img src="./assets/images/icon-fog.webp" alt="" />
+                  <p class="forecast-h__time text-20m">3 PM</p>
+                </div>
+                <div class="forecast-h__temp text-16">63°</div>
+              </div>
+
+              <!-- card 8 -->
+              <div class="forecast-h__card">
+                <div class="forecast-h__info">
+                  <img src="./assets/images/icon-fog.webp" alt="" />
+                  <p class="forecast-h__time text-20m">3 PM</p>
+                </div>
+                <div class="forecast-h__temp text-16">63°</div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

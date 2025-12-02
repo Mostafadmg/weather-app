@@ -1,0 +1,62 @@
+// Base reset styles
+/* ---------------------------------------------
+   UNIVERSAL RESET
+--------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  /* ensures pseudo-elements inherit fonts and border-box */
+  font: inherit;
+}
+
+/* ---------------------------------------------
+   BUTTON RESET
+--------------------------------------------- */
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  line-height: inherit;
+
+  /* Remove default browser outlines */
+  &:focus {
+    outline: none;
+  }
+
+  /* Stop Safari/iOS weird grey tap effect */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ---------------------------------------------
+   LIST RESET
+--------------------------------------------- */
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+/* ---------------------------------------------
+   A RESET
+--------------------------------------------- */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

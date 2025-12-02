@@ -1,0 +1,17 @@
+// Button styles
+.btn-primary {
+  background-color: $blue-700;
+  padding: $spacing-200 $spacing-300;
+  font-family: inherit;
+  border-radius: $radius-12;
+  width: 100%;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: $blue-500;
+  }
+
+  @include tablet {
+    width: 25%;
+  }
+}

@@ -1,0 +1,120 @@
+// Typography styles
+/* -----------------------------------------
+   TYPOGRAPHY SCALE (Design Tokens)
+------------------------------------------ */
+
+$typography-scale: (
+  // 96px = 6rem
+  96:
+    (
+      size: 96px,
+      line: 100%,
+      letter: -2px,
+      family: "DM Sans",
+      weight: 600,
+      // SemiBold
+    ),
+
+  // 52px = 3.25rem
+  52:
+    (
+      size: 52px,
+      line: 120%,
+      letter: 0,
+      family: "Bricolage Grotesque",
+      weight: 700,
+      // Bold
+    ),
+
+  // 32px = 2rem
+  32:
+    (
+      size: 32px,
+      line: 100%,
+      letter: 0,
+      family: "DM Sans",
+      weight: 300,
+      // Light
+    ),
+
+  // 28px = 1.75rem
+  28:
+    (
+      size: 28px,
+      line: 120%,
+      letter: 0,
+      family: "DM Sans",
+      weight: 700,
+      // Bold
+    ),
+
+  // 20px = 1.25rem
+  20:
+    (
+      size: 20px,
+      line: 120%,
+      letter: 0,
+      family: "DM Sans",
+      weight: 600,
+      // SemiBold
+    ),
+
+  // 20px (medium) = 1.25rem
+  "20m":
+    (
+      size: 20px,
+      line: 120%,
+      letter: 0,
+      family: "DM Sans",
+      weight: 500,
+      // Medium
+    ),
+
+  // 18px = 1.125rem
+  18:
+    (
+      size: 18px,
+      line: 120%,
+      letter: 0,
+      family: "DM Sans",
+      weight: 500,
+      // Medium
+    ),
+
+  // 16px = 1rem
+  16:
+    (
+      size: 16px,
+      line: 120%,
+      letter: 0,
+      family: "DM Sans",
+      weight: 500,
+      // Medium
+    ),
+
+  // 14px = 0.875rem
+  14:
+    (
+      size: 14px,
+      line: 120%,
+      letter: 0,
+      family: "DM Sans",
+      weight: 500,
+      // Medium
+    )
+);
+
+/* -----------------------------------------
+   UTILITY GENERATOR
+   Creates: .text-96, .text-52, ..., .text-14
+------------------------------------------ */
+
+@each $key, $settings in $typography-scale {
+  .text-#{$key} {
+    font-size: map-get($settings, size);
+    line-height: map-get($settings, line);
+    letter-spacing: map-get($settings, letter);
+    font-family: map-get($settings, family);
+    font-weight: map-get($settings, weight);
+  }
+}

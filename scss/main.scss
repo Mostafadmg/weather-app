@@ -1,0 +1,28 @@
+// Main SCSS file - imports all partials
+
+// Utilities (must come first - used by other files)
+@import "utilities/mixins";
+@import "utilities/helpers";
+
+// Base styles
+@import "base/reset";
+@import "base/typography";
+@import "base/variables";
+@import "base/base";
+
+// Components
+@import "components/buttons";
+@import "components/cards";
+@import "components/forms";
+@import "components/input";
+@import "components/weather-info";
+@import "components/weather-details";
+@import "components/forecast";
+
+// Layout
+@import "layout/header";
+@import "layout/footer";
+@import "layout/grid";
+
+// Pages
+@import "pages/home";

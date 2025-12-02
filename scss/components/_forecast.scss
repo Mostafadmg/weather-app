@@ -1,0 +1,124 @@
+.forecast {
+  margin-top: $spacing-400;
+
+  @include desktop {
+    margin-top: $spacing-600;
+    flex: 1;
+  }
+  &__label {
+    margin-bottom: $spacing-250;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-200;
+
+    @include tablet {
+      grid-template-columns: repeat(7, 1fr);
+    }
+  }
+
+  &__item {
+    background-color: $neutral-800;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing-200;
+    padding: $spacing-200;
+    border: 1px solid #3c3b5e;
+    border-radius: $radius-12;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $neutral-700;
+      transform: scale(1.02);
+    }
+  }
+  &__icon {
+    width: 3.75rem;
+    aspect-ratio: 1/1;
+  }
+
+  &__temp {
+    display: flex;
+    gap: $spacing-200;
+  }
+}
+
+// right  section hrly forecast
+
+.forecast-h {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-200;
+  margin-top: $spacing-500;
+  flex-shrink: 0;
+  background-color: $neutral-800;
+  border-radius: $radius-20;
+  padding: $spacing-250 $spacing-200;
+
+  @include desktop {
+    margin-top: 0;
+  }
+
+  &__header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__hrly-logo {
+    width: 2rem;
+    filter: invert(1);
+  }
+  &__dropdown {
+    background-color: $neutral-800;
+    padding: 1.25rem;
+    border-radius: 0.5rem;
+    display: flex;
+    gap: $spacing-200;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #302f4a;
+
+    &:hover {
+      background-color: $neutral-700;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-200;
+  }
+
+  &__card {
+    border-radius: var(--corner-radius-8, 0.5rem);
+    border: 1px solid var(--colors-neutral-600, #3c3b5e);
+    background: var(--colors-neutral-700, #302f4a);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $spacing-125 $spacing-150;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: $neutral-600;
+    }
+  }
+
+  &__info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: $spacing-100;
+    & img {
+      width: 2.5rem;
+    }
+  }
+}
