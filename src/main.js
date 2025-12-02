@@ -31,25 +31,37 @@ let globalForecastData = null;
 let searchTimeout = null;
 let userMadeSelection = false;
 
+// Import images for Vite to process
+import iconSunny from "../assets/images/icon-sunny.webp";
+import iconFullMoon from "../assets/images/full-moon.png";
+import iconPartlyCloudy from "../assets/images/icon-partly-cloudy.webp";
+import iconCloudy from "../assets/images/cloudy.png";
+import iconOvercast from "../assets/images/icon-overcast.webp";
+import iconDrizzle from "../assets/images/icon-drizzle.webp";
+import iconRain from "../assets/images/icon-rain.webp";
+import iconStorm from "../assets/images/icon-storm.webp";
+import iconSnow from "../assets/images/icon-snow.webp";
+import iconFog from "../assets/images/icon-fog.webp";
+
 const weatherIconMap = {
-  "01d": "./assets/images/icon-sunny.webp",
-  "01n": "./assets/images/full-moon.png",
-  "02d": "./assets/images/icon-partly-cloudy.webp",
-  "02n": "./assets/images/icon-partly-cloudy.webp",
-  "03d": "./assets/images/cloudy.png",
-  "03n": "./assets/images/cloudy.png",
-  "04d": "./assets/images/icon-overcast.webp",
-  "04n": "./assets/images/icon-overcast.webp",
-  "09d": "./assets/images/icon-drizzle.webp",
-  "09n": "./assets/images/icon-drizzle.webp",
-  "10d": "./assets/images/icon-rain.webp",
-  "10n": "./assets/images/icon-rain.webp",
-  "11d": "./assets/images/icon-storm.webp",
-  "11n": "./assets/images/icon-storm.webp",
-  "13d": "./assets/images/icon-snow.webp",
-  "13n": "./assets/images/icon-snow.webp",
-  "50d": "./assets/images/icon-fog.webp",
-  "50n": "./assets/images/icon-fog.webp",
+  "01d": iconSunny,
+  "01n": iconFullMoon,
+  "02d": iconPartlyCloudy,
+  "02n": iconPartlyCloudy,
+  "03d": iconCloudy,
+  "03n": iconCloudy,
+  "04d": iconOvercast,
+  "04n": iconOvercast,
+  "09d": iconDrizzle,
+  "09n": iconDrizzle,
+  "10d": iconRain,
+  "10n": iconRain,
+  "11d": iconStorm,
+  "11n": iconStorm,
+  "13d": iconSnow,
+  "13n": iconSnow,
+  "50d": iconFog,
+  "50n": iconFog,
 };
 
 // ============================================
