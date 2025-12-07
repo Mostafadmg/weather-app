@@ -18,6 +18,11 @@
   </head>
   <body>
     <div id="app" class="app">
+      <!-- Loading Spinner Overlay -->
+      <div class="loading-overlay" data-loading-overlay>
+        <div class="loading-spinner"></div>
+        <p class="loading-text">Fetching weather data...</p>
+      </div>
       <header class="header">
         <nav class="header__nav">
           <div class="header__logo">
@@ -46,38 +51,44 @@
             <ul class="header__setting-menu" data-settings-dropdown>
               <li class="header__setting-group">
                 <div class="header__setting-group-title">Temperature</div>
-                <li class="header__setting-item" data-unit-option="celsius">
-                  <span class="header__setting-text">Celsius (°C)</span>
-                  <span class="header__setting-check" data-celsius-check>✓</span>
-                </li>
-                <li class="header__setting-item" data-unit-option="fahrenheit">
-                  <span class="header__setting-text">Fahrenheit (°F)</span>
-                  <span class="header__setting-check" data-fahrenheit-check></span>
-                </li>
+                <ul>
+                  <li class="header__setting-item" data-unit-option="celsius">
+                    <span class="header__setting-text">Celsius (°C)</span>
+                    <span class="header__setting-check" data-celsius-check>✓</span>
+                  </li>
+                  <li class="header__setting-item" data-unit-option="fahrenheit">
+                    <span class="header__setting-text">Fahrenheit (°F)</span>
+                    <span class="header__setting-check" data-fahrenheit-check>✓</span>
+                  </li>
+                </ul>
               </li>
 
               <li class="header__setting-group">
                 <div class="header__setting-group-title">Wind Speed</div>
-                <li class="header__setting-item" data-wind-option="mph">
-                  <span class="header__setting-text">Miles per hour (mph)</span>
-                  <span class="header__setting-check" data-mph-check>✓</span>
-                </li>
-                <li class="header__setting-item" data-wind-option="kmh">
-                  <span class="header__setting-text">Kilometers per hour (km/h)</span>
-                  <span class="header__setting-check" data-kmh-check></span>
-                </li>
+                <ul>
+                  <li class="header__setting-item" data-wind-option="mph">
+                    <span class="header__setting-text">Miles per hour (mph)</span>
+                    <span class="header__setting-check" data-mph-check>✓</span>
+                  </li>
+                  <li class="header__setting-item" data-wind-option="kmh">
+                    <span class="header__setting-text">Kilometers per hour (km/h)</span>
+                    <span class="header__setting-check" data-kmh-check></span>
+                  </li>
+                </ul>
               </li>
 
               <li class="header__setting-group">
                 <div class="header__setting-group-title">Time Format</div>
-                <li class="header__setting-item" data-time-option="12">
-                  <span class="header__setting-text">12-hour (AM/PM)</span>
-                  <span class="header__setting-check" data-12hr-check>✓</span>
-                </li>
-                <li class="header__setting-item" data-time-option="24">
-                  <span class="header__setting-text">24-hour</span>
-                  <span class="header__setting-check" data-24hr-check></span>
-                </li>
+                <ul>
+                  <li class="header__setting-item" data-time-option="12">
+                    <span class="header__setting-text">12-hour (AM/PM)</span>
+                    <span class="header__setting-check" data-12hr-check>✓</span>
+                  </li>
+                  <li class="header__setting-item" data-time-option="24">
+                    <span class="header__setting-text">24-hour</span>
+                    <span class="header__setting-check" data-24hr-check></span>
+                  </li>
+                </ul>
               </li>
             </ul>
           </div>
@@ -141,6 +152,7 @@
                   class="weather__temp text-96"
                   id="weather-temp"
                   data-main-temperature
+                  data-temp
                   data-unit="celsius"
                 >
                   68 °
@@ -152,7 +164,9 @@
               <!-- item 1 -->
               <div class="weather__details" data-detail-card="feels-like">
                 <p class="weather__details-text text-20m">Feels like</p>
-                <p class="weather__details-tem text-32" data-feels-like-temp>64°</p>
+                <p class="weather__details-tem text-32" data-feels-like-temp data-temp>
+                  64°
+                </p>
               </div>
 
               <!-- item 2 -->
@@ -195,8 +209,8 @@
                   <img src="./assets/images/icon-rain.webp" alt="" data-day-icon />
                 </div>
                 <div class="forecast__temp text-16">
-                  <p class="forecast__temp--min" data-day-temp-max>70°</p>
-                  <p class="forecast__temp--max" data-day-temp-min>57°</p>
+                  <p class="forecast__temp--min" data-day-temp-max data-temp>70°</p>
+                  <p class="forecast__temp--max" data-day-temp-min data-temp>57°</p>
                 </div>
               </div>
 
@@ -208,8 +222,8 @@
                   <img src="./assets/images/icon-rain.webp" alt="" data-day-icon />
                 </div>
                 <div class="forecast__temp text-16">
-                  <p class="forecast__temp--min" data-day-temp-max>70°</p>
-                  <p class="forecast__temp--max" data-day-temp-min>57°</p>
+                  <p class="forecast__temp--min" data-day-temp-max data-temp>70°</p>
+                  <p class="forecast__temp--max" data-day-temp-min data-temp>57°</p>
                 </div>
               </div>
 
@@ -221,8 +235,8 @@
                   <img src="./assets/images/icon-rain.webp" alt="" data-day-icon />
                 </div>
                 <div class="forecast__temp text-16">
-                  <p class="forecast__temp--min" data-day-temp-max>70°</p>
-                  <p class="forecast__temp--max" data-day-temp-min>57°</p>
+                  <p class="forecast__temp--min" data-day-temp-max data-temp>70°</p>
+                  <p class="forecast__temp--max" data-day-temp-min data-temp>57°</p>
                 </div>
               </div>
 
@@ -234,8 +248,8 @@
                   <img src="./assets/images/icon-rain.webp" alt="" data-day-icon />
                 </div>
                 <div class="forecast__temp text-16">
-                  <p class="forecast__temp--min" data-day-temp-max>70°</p>
-                  <p class="forecast__temp--max" data-day-temp-min>57°</p>
+                  <p class="forecast__temp--min" data-day-temp-max data-temp>70°</p>
+                  <p class="forecast__temp--max" data-day-temp-min data-temp>57°</p>
                 </div>
               </div>
 
@@ -247,8 +261,8 @@
                   <img src="./assets/images/icon-rain.webp" alt="" data-day-icon />
                 </div>
                 <div class="forecast__temp text-16">
-                  <p class="forecast__temp--min" data-day-temp-max>70°</p>
-                  <p class="forecast__temp--max" data-day-temp-min>57°</p>
+                  <p class="forecast__temp--min" data-day-temp-max data-temp>70°</p>
+                  <p class="forecast__temp--max" data-day-temp-min data-temp>57°</p>
                 </div>
               </div>
 
@@ -260,8 +274,8 @@
                   <img src="./assets/images/icon-rain.webp" alt="" data-day-icon />
                 </div>
                 <div class="forecast__temp text-16">
-                  <p class="forecast__temp--min" data-day-temp-max>70°</p>
-                  <p class="forecast__temp--max" data-day-temp-min>57°</p>
+                  <p class="forecast__temp--min" data-day-temp-max data-temp>70°</p>
+                  <p class="forecast__temp--max" data-day-temp-min data-temp>57°</p>
                 </div>
               </div>
 
@@ -273,8 +287,8 @@
                   <img src="./assets/images/icon-rain.webp" alt="" data-day-icon />
                 </div>
                 <div class="forecast__temp text-16">
-                  <p class="forecast__temp--min" data-day-temp-max>70°</p>
-                  <p class="forecast__temp--max" data-day-temp-min>57°</p>
+                  <p class="forecast__temp--min" data-day-temp-max data-temp>70°</p>
+                  <p class="forecast__temp--max" data-day-temp-min data-temp>57°</p>
                 </div>
               </div>
             </div>
@@ -323,6 +337,10 @@
               </div>
             </div>
 
+            <div class="forecast-h__no-data" data-no-hourly-data style="display: none">
+              <p>⚠️ No hourly forecast data available for this day</p>
+            </div>
+
             <div class="forecast-h__cards" data-hourly-forecast-list>
               <!-- card 1 -->
               <div class="forecast-h__card" data-hourly-item data-hour-index="0">
@@ -330,7 +348,7 @@
                   <img src="./assets/images/icon-fog.webp" alt="" data-hourly-icon />
                   <p class="forecast-h__time text-20m" data-hourly-time>3 PM</p>
                 </div>
-                <div class="forecast-h__temp text-16" data-hourly-temp>63°</div>
+                <div class="forecast-h__temp text-16" data-hourly-temp data-temp>63°</div>
               </div>
 
               <!-- card 2 -->
@@ -339,7 +357,7 @@
                   <img src="./assets/images/icon-fog.webp" alt="" data-hourly-icon />
                   <p class="forecast-h__time text-20m" data-hourly-time>3 PM</p>
                 </div>
-                <div class="forecast-h__temp text-16" data-hourly-temp>63°</div>
+                <div class="forecast-h__temp text-16" data-hourly-temp data-temp>63°</div>
               </div>
 
               <!-- card 3 -->
@@ -348,7 +366,7 @@
                   <img src="./assets/images/icon-fog.webp" alt="" data-hourly-icon />
                   <p class="forecast-h__time text-20m" data-hourly-time>3 PM</p>
                 </div>
-                <div class="forecast-h__temp text-16" data-hourly-temp>63°</div>
+                <div class="forecast-h__temp text-16" data-hourly-temp data-temp>63°</div>
               </div>
               <!-- card 4 -->
               <div class="forecast-h__card" data-hourly-item data-hour-index="3">
@@ -356,7 +374,7 @@
                   <img src="./assets/images/icon-fog.webp" alt="" data-hourly-icon />
                   <p class="forecast-h__time text-20m" data-hourly-time>3 PM</p>
                 </div>
-                <div class="forecast-h__temp text-16" data-hourly-temp>63°</div>
+                <div class="forecast-h__temp text-16" data-hourly-temp data-temp>63°</div>
               </div>
 
               <!-- card 5 -->
@@ -365,7 +383,7 @@
                   <img src="./assets/images/icon-fog.webp" alt="" data-hourly-icon />
                   <p class="forecast-h__time text-20m" data-hourly-time>3 PM</p>
                 </div>
-                <div class="forecast-h__temp text-16" data-hourly-temp>63°</div>
+                <div class="forecast-h__temp text-16" data-hourly-temp data-temp>63°</div>
               </div>
 
               <!-- card 6 -->
@@ -374,7 +392,7 @@
                   <img src="./assets/images/icon-fog.webp" alt="" data-hourly-icon />
                   <p class="forecast-h__time text-20m" data-hourly-time>3 PM</p>
                 </div>
-                <div class="forecast-h__temp text-16" data-hourly-temp>63°</div>
+                <div class="forecast-h__temp text-16" data-hourly-temp data-temp>63°</div>
               </div>
 
               <!-- card 7 -->
@@ -383,7 +401,7 @@
                   <img src="./assets/images/icon-fog.webp" alt="" data-hourly-icon />
                   <p class="forecast-h__time text-20m" data-hourly-time>3 PM</p>
                 </div>
-                <div class="forecast-h__temp text-16" data-hourly-temp>63°</div>
+                <div class="forecast-h__temp text-16" data-hourly-temp data-temp>63°</div>
               </div>
 
               <!-- card 8 -->
@@ -392,7 +410,7 @@
                   <img src="./assets/images/icon-fog.webp" alt="" data-hourly-icon />
                   <p class="forecast-h__time text-20m" data-hourly-time>3 PM</p>
                 </div>
-                <div class="forecast-h__temp text-16" data-hourly-temp>63°</div>
+                <div class="forecast-h__temp text-16" data-hourly-temp data-temp>63°</div>
               </div>
             </div>
           </div>

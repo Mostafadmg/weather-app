@@ -25,6 +25,7 @@ body {
   @include desktop {
     flex: 1;
     max-width: 52rem;
+    min-width: 783px;
     display: flex;
     flex-direction: column;
   }

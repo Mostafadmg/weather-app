@@ -32,6 +32,10 @@
     background-color: transparent;
     color: white;
     border-radius: $radius-12;
+    font-family: "DM Sans", sans-serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
 
     &::placeholder {
       font-family: "DM Sans";
@@ -90,11 +94,18 @@
     padding: 16px 20px;
     cursor: pointer;
     color: #fff;
-    transition: background 0.2s;
+    transition: all 0.25s ease;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-family: "DM Sans", sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
 
     &:hover {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.12);
+      padding-left: 24px;
+      border-left: 3px solid rgba(74, 222, 128, 0.6);
     }
 
     &:last-child {
